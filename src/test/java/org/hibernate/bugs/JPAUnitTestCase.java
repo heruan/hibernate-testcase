@@ -26,10 +26,12 @@ public class JPAUnitTestCase {
     }
 
     @Test
-    public void testTemplate() throws SQLException {
+    public void spatialConverterTest() throws SQLException {
         EntityManager em = this.entityManagerFactory.createEntityManager();
         em.getTransaction().begin();
-        // test code goes here
+        SpatialEntity spatialEntity = new SpatialEntity();
+        spatialEntity.setCoordinates(new Coordinates(45.5455, 11.5354));
+        em.persist(spatialEntity);
         em.getTransaction().commit();
     }
 
