@@ -73,7 +73,4 @@ class Bar {
 
     String name;
 
-    @OneToOne(mappedBy = "bar")
-    Foo foo;
-
 }
